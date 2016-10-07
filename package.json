@@ -54,7 +54,6 @@
   },
   "homepage": "https://github.com/pmdroid/yeelight-wifi#readme",
   "dependencies": {
-    "color": "^0.11.3",
     "debug": "^2.2.0",
     "joi": "^9.0.4",
     "node-ssdp": "^2.8.0"
