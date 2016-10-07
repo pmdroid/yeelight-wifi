@@ -11,7 +11,7 @@ import Yeelight from './Yeelight';
  *
  * @extends EventEmitter
  */
-export default class YeelightSearch extends EventEmitter {
+class YeelightSearch extends EventEmitter {
   constructor() {
     super();
 
@@ -47,3 +47,5 @@ export default class YeelightSearch extends EventEmitter {
     return this.yeelights.find(item => item.getId() === id);
   }
 }
+
+module.exports = YeelightSearch;
