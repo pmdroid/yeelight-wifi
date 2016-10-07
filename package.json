@@ -1,0 +1,62 @@
+{
+  "name": "yeelight-wifi",
+  "version": "0.0.0",
+  "description": "Yeelight WiFi lib",
+  "main": "index.js",
+  "directories": {
+    "docs": "docs/",
+    "example": "examples/"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-register": "^6.14.0",
+    "chai": "^3.5.0",
+    "codecov": "^1.0.1",
+    "documentation": "^4.0.0-beta10",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "isparta": "^4.0.0",
+    "mocha": "^3.0.2",
+    "mocha-junit-reporter": "^1.12.0",
+    "mversion": "^1.10.1",
+    "nyc": "^8.3.0",
+    "sinon": "^1.17.6"
+  },
+  "scripts": {
+    "build": "node_modules/.bin/babel src/ -d build/ && git commit -am 'dist/ folder created'",
+    "docs": "rm -rf docs/ && node_modules/.bin/documentation build src/*.js --format html --output docs/ --name yeelight --project-version $npm_package_version --github && git commit -am 'docs updated'",
+    "test": "node_modules/.bin/mocha --compilers js:babel-register",
+    "test:eslint": "node_modules/.bin/eslint",
+    "test:reporter": "npm test -- --reporter mocha-junit-reporter",
+    "test:codecov": "node_modules/.bin/babel-node node_modules/.bin/isparta cover _mocha && node_modules/.bin/codecov",
+    "test:watch": "npm test -- --watch",
+    "release:patch": "npm run build && node_modules/.bin/mversion patch -m 'Bumped to v%s' --tag 'v%s' && npm run docs",
+    "release:minor": "npm run build && node_modules/.bin/mversion minor -m 'Bumped to v%s' --tag 'v%s' && npm run docs",
+    "release:major": "npm run build && node_modules/.bin/mversion major -m 'Bumped to v%s' --tag 'v%s' && npm run docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmdroid/yeelight-wifi.git"
+  },
+  "keywords": [
+    "light",
+    "yeelight",
+    "yeelight wifi"
+  ],
+  "author": "Pascal Matthiesen <me@pascalmatthiesen.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pmdroid/yeelight-wifi/issues"
+  },
+  "homepage": "https://github.com/pmdroid/yeelight-wifi#readme",
+  "dependencies": {
+    "color": "^0.11.3",
+    "debug": "^2.2.0",
+    "joi": "^9.0.4",
+    "node-ssdp": "^2.8.0"
+  }
+}

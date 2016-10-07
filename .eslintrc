@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "no-restricted-syntax": 0,
+    "no-shadow": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "max-len": 0
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  }
+}

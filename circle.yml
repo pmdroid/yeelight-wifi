@@ -1,0 +1,17 @@
+machine:
+  node:
+    version: 6.4.0
+
+test:
+  override:
+    - npm run test:reporter:
+        environment:
+            MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+    - npm run test:codecov
+
+deployment:
+  release:
+    tag: /v\d.*/
+    commands:
+      - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
+      - npm publish
