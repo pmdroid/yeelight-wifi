@@ -4,7 +4,7 @@ import { Client } from 'node-ssdp';
 import Yeelight from './Yeelight';
 
 /**
- * Create a new instance of the Yeelight lib
+ * Create a new instance of the YeelightSearch class
  * and start searching for new Yeelights
  * once a Yeelight has been found it will create an Yeelight instance
  * and emits the 'found' event light the Yeelight instance as payload
