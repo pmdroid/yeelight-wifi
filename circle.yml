@@ -12,6 +12,7 @@ test:
     - npm run test:reporter:
         environment:
             MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+    - npm run test:eslint
     - npm run test:codecov
 
 deployment:
