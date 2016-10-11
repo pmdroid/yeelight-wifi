@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "precommit": " npm run docs",
+  }
+}

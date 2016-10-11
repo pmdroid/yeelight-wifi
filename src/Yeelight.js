@@ -66,6 +66,11 @@ export default class Yeelight extends EventEmitter {
         schema = Joi.any(); //eslint-disable-line
       }
 
+      if (!this.supports.includes(method)) {
+        reject(new Error(`unsupported method: ${method}`));
+        return;
+      }
+
       Joi.validate(params, schema, (err, value) => {
         if (err) {
           reject(err);

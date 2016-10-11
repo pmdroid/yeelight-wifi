@@ -27,16 +27,16 @@
     "sinon": "^1.17.6"
   },
   "scripts": {
-    "build": "node_modules/.bin/babel src/ -d build/ && git commit -am 'build/ folder created'",
-    "docs": "rm -rf docs/ && node_modules/.bin/documentation build src/*.js --format html --output docs/ --name yeelight --project-version $npm_package_version --github && git commit -am 'docs updated'",
+    "build": "node_modules/.bin/babel src/ -d build/",
+    "docs": "rm -rf docs/ && node_modules/.bin/documentation build src/*.js --format html --output docs/ --name yeelight --project-version $npm_package_version --github",
     "test": "node_modules/.bin/mocha --compilers js:babel-register",
     "test:eslint": "node_modules/.bin/eslint",
     "test:reporter": "npm test -- --reporter mocha-junit-reporter",
     "test:codecov": "node_modules/.bin/babel-node node_modules/.bin/isparta cover _mocha && node_modules/.bin/codecov",
     "test:watch": "npm test -- --watch",
-    "release:patch": "npm run build && node_modules/.bin/mversion patch -m 'Bumped to v%s' --tag 'v%s' && npm run docs",
-    "release:minor": "npm run build && node_modules/.bin/mversion minor -m 'Bumped to v%s' --tag 'v%s' && npm run docs",
-    "release:major": "npm run build && node_modules/.bin/mversion major -m 'Bumped to v%s' --tag 'v%s' && npm run docs"
+    "release:patch": "node_modules/.bin/mversion patch -m 'Bumped to v%s' --tag 'v%s'",
+    "release:minor": "node_modules/.bin/mversion minor -m 'Bumped to v%s' --tag 'v%s'",
+    "release:major": "node_modules/.bin/mversion major -m 'Bumped to v%s' --tag 'v%s'"
   },
   "repository": {
     "type": "git",
@@ -55,6 +55,7 @@
   "homepage": "https://github.com/pmdroid/yeelight-wifi#readme",
   "dependencies": {
     "debug": "^2.2.0",
+    "eslint-plugin-import": "^2.0.1",
     "joi": "^9.0.4",
     "node-ssdp": "^2.8.0"
   }
