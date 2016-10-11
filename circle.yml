@@ -2,6 +2,11 @@ machine:
   node:
     version: 6.4.0
 
+dependencies:
+  override:
+      - npm i -g yarn
+      - yarn
+
 test:
   override:
     - npm run test:reporter:
