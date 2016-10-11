@@ -28,7 +28,8 @@
   },
   "scripts": {
     "build": "node_modules/.bin/babel src/ -d build/",
-    "docs": "rm -rf docs/ && node_modules/.bin/documentation build src/*.js --format html --output docs/ --name yeelight --project-version $npm_package_version --github",
+    "docs": "npm run docs:generate && git add -A && git commit -am \"updated docs to version $npm_package_version\"",
+    "docs:generate": "rm -rf docs/ && node_modules/.bin/documentation build src/*.js --format html --output docs/ --name yeelight --project-version $npm_package_version --github",
     "test": "node_modules/.bin/mocha --compilers js:babel-register",
     "test:eslint": "node_modules/.bin/eslint",
     "test:reporter": "npm test -- --reporter mocha-junit-reporter",
