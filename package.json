@@ -16,9 +16,9 @@
     "documentation": "^4.0.0-beta10",
     "eslint": "^3.5.0",
     "eslint-config-airbnb": "^12.0.0",
-    "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
+    "eslint-plugin-import": "^2.0.1",
     "isparta": "^4.0.0",
     "mocha": "^3.1.1",
     "mocha-junit-reporter": "^1.12.0",
@@ -55,7 +55,6 @@
   "homepage": "https://github.com/pmdroid/yeelight-wifi#readme",
   "dependencies": {
     "debug": "^2.2.0",
-    "eslint-plugin-import": "^2.0.1",
     "joi": "^9.0.4",
     "node-ssdp": "^2.8.0"
   }
