@@ -80,7 +80,7 @@ var Yeelight = function (_EventEmitter) {
 
     _this.socket = new _net2.default.Socket();
 
-    _this.socket.on('data', _this.formatResponse.bind(_this));
+    _this.socket.on('end', _this.formatResponse.bind(_this));
 
     _this.socket.connect(_this.port, _this.hostname, function () {
       _this.log('connected to ' + _this.name + ' ' + _this.hostname + ':' + _this.port);
