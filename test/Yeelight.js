@@ -113,7 +113,20 @@ describe('Yeelight', () => {
       const schema = Joi.array().items(
         Joi.number().min(0).max(100).required(),
         Joi.string().allow('sudden', 'smooth').required(),
-        Joi.number().required()
+        Joi.number().required(),
+      );
+      yeelight.sendRequest('unsupported', ['10', 'smooth', '1000'], schema)
+      .catch((error) => {
+        expect(error.message).to.be.equal('unsupported method: unsupported');
+        done();
+      });
+    });
+
+    it('send request with valid schema', (done) => {
+      const schema = Joi.array().items(
+        Joi.number().min(0).max(100).required(),
+        Joi.string().allow('sudden', 'smooth').required(),
+        Joi.number().required(),
       );
       yeelight.sendRequest('set_bright', ['10', 'smooth', '1000'], schema)
         .then(done)
@@ -124,7 +137,7 @@ describe('Yeelight', () => {
       const schema = Joi.array().items(
         Joi.number().min(0).max(100).required(),
         Joi.string().allow('sudden', 'smooth').required(),
-        Joi.number().required()
+        Joi.number().required(),
       );
       yeelight.sendRequest('set_bright', [null, 'smooth', '1000'], schema)
         .catch((error) => {
@@ -152,7 +165,7 @@ describe('Yeelight', () => {
       const schema = Joi.array().items(
         Joi.number().min(0).max(100).required(),
         Joi.string().allow('sudden', 'smooth').required(),
-        Joi.number().required()
+        Joi.number().required(),
       );
       yeelight.sendRequest('set_bright', ['10', 'smooth', '1000'], schema)
         .catch((error) => {
