@@ -168,7 +168,7 @@ export default class Yeelight extends EventEmitter {
    * smart LED, then a empty string value ("") will be returned.
    *
    * @example
-   * getValues(['power', 'bright');
+   * getValues(['power', 'bright']);
    *
    * @returns {Promise} will be invoked after successfull or failed send
    */
