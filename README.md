@@ -1,4 +1,6 @@
 # yeelight-wifi
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/pmdroid/yeelight-wifi.svg)](https://greenkeeper.io/)
 [![CircleCI](https://circleci.com/gh/pmdroid/yeelight-wifi.svg?style=svg)](https://circleci.com/gh/pmdroid/yeelight-wifi)
 [![codecov](https://codecov.io/gh/pmdroid/yeelight-wifi/branch/master/graph/badge.svg)](https://codecov.io/gh/pmdroid/yeelight-wifi)
 
