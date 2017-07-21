@@ -16,18 +16,26 @@ class YeelightSearch extends EventEmitter {
     super();
 
     this.yeelights = [];
-    this.client = new Client({ ssdpPort: 1982 });
+    // Setting the sourcePort ensures multicast traffic is received
+    this.client = new Client({ sourcePort: 1982, ssdpPort: 1982 });
 
-    this.client.on('response', (data) => {
-      let yeelight = this.yeelights.find(item => item.getId() === data.ID);
-      if (!yeelight) {
-        yeelight = new Yeelight(data);
-        this.yeelights.push(yeelight);
-        this.emit('found', yeelight);
-      }
-    });
+    this.client.on('response', (data) => this.addLight(data));
+    // Register devices that sends NOTIFY to multicast address too
+    this.client.on('advertise-alive', (data) => this.addLight(data));
 
     this.client.search('wifi_bulb');
+  }
+
+  /**
+   * adds a new light to the lights array
+   */
+  addLight(lightdata) {
+    let yeelight = this.yeelights.find(item => item.getId() === lightdata.ID);
+    if (!yeelight) {
+	  yeelight = new Yeelight(lightdata);
+	  this.yeelights.push(yeelight);
+	  this.emit('found', yeelight);
+    }
   }
 
   /**
