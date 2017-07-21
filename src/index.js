@@ -54,6 +54,13 @@ class YeelightSearch extends EventEmitter {
   getYeelightById(id) {
     return this.yeelights.find(item => item.getId() === id);
   }
+
+  /**
+   * refresh lights sending a new m-search
+   */
+  refresh() {
+    this.client.search('wifi_bulb');
+  }
 }
 
 module.exports = YeelightSearch;
