@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/bower,django,phpstorm,webstorm,android,composer,maven,node,symfony,osx,svn,vagrant,windows
 
+# joe
+*~
+
 ### Maven ###
 target/
 pom.xml.tag
