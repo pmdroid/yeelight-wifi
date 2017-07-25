@@ -30,7 +30,7 @@
     "build": "node_modules/.bin/babel src/ -d build/",
     "docs": "rm -rf docs/ && node_modules/.bin/documentation build src/*.js --format html --output docs/ --name yeelight --project-version $npm_package_version --github",
     "test": "node_modules/.bin/mocha --compilers js:babel-register",
-    "test:eslint": "node_modules/.bin/eslint",
+    "test:eslint": "node_modules/.bin/eslint src/*.js",
     "test:reporter": "npm test -- --reporter mocha-junit-reporter",
     "test:codecov": "node_modules/.bin/babel-node node_modules/.bin/isparta cover _mocha && node_modules/.bin/codecov",
     "test:watch": "npm test -- --watch",

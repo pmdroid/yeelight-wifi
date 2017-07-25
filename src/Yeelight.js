@@ -44,7 +44,7 @@ export default class Yeelight extends EventEmitter {
 
     this.socket = new net.Socket();
 
-    this.socket.on('end', this.formatResponse.bind(this));
+    this.socket.on('data', this.formatResponse.bind(this));
 
     this.socket.connect(this.port, this.hostname, () => {
       this.log(`connected to ${this.name} ${this.hostname}:${this.port}`);
@@ -108,6 +108,8 @@ export default class Yeelight extends EventEmitter {
     const id = json.id;
     const result = json.result;
 
+    console.log(resp);
+
     if (!id) {
       this.log(`got response without id: ${resp.toString().replace(/\r\n/, '')}`);
       this.emit('notifcation', json);
@@ -156,7 +158,7 @@ export default class Yeelight extends EventEmitter {
    */
   setName(name) {
     const schema = Joi.array().items(
-      Joi.string().required()
+      Joi.string().required(),
     );
     return this.sendRequest('set_name', [name], schema);
   }
@@ -168,7 +170,7 @@ export default class Yeelight extends EventEmitter {
    * smart LED, then a empty string value ("") will be returned.
    *
    * @example
-   * getValues(['power', 'bright']);
+   * getValues('power', 'bright');
    *
    * @returns {Promise} will be invoked after successfull or failed send
    */
@@ -219,7 +221,7 @@ export default class Yeelight extends EventEmitter {
     const schema = Joi.array().items(
       Joi.number().min(1700).max(6500).required(),
       Joi.string().allow('sudden', 'smooth').required(),
-      Joi.number().required()
+      Joi.number().required(),
     );
     return this.sendRequest('set_ct_abx', [temperature, effect, time], schema);
   }
@@ -244,7 +246,7 @@ export default class Yeelight extends EventEmitter {
     const schema = Joi.array().items(
       Joi.number().min(0).max(100).required(),
       Joi.string().allow('sudden', 'smooth').required(),
-      Joi.number().required()
+      Joi.number().required(),
     );
     return this.sendRequest('set_bright', [brightness, effect, time], schema);
   }
@@ -265,7 +267,7 @@ export default class Yeelight extends EventEmitter {
     const schema = Joi.array().items(
       Joi.any().required(),
       Joi.string().allow('sudden', 'smooth').required(),
-      Joi.number().required()
+      Joi.number().required(),
     );
     return this.sendRequest('set_power', ['on', effect, time], schema);
   }
@@ -286,7 +288,7 @@ export default class Yeelight extends EventEmitter {
     const schema = Joi.array().items(
       Joi.any().required(),
       Joi.string().allow('sudden', 'smooth').required(),
-      Joi.number().required()
+      Joi.number().required(),
     );
     return this.sendRequest('set_power', ['off', effect, time], schema);
   }
@@ -317,7 +319,7 @@ export default class Yeelight extends EventEmitter {
       Joi.string().allow('color', 'hsv', 'ct', 'auto_delay_off').required(),
       Joi.any().required(),
       Joi.any().required(),
-      Joi.any()
+      Joi.any(),
     );
     return this.sendRequest('set_scene', params, schema);
   }
@@ -343,7 +345,7 @@ export default class Yeelight extends EventEmitter {
     const schema = Joi.array().items(
       Joi.number().min(0).max(16777215).required(),
       Joi.string().allow('sudden', 'smooth').required(),
-      Joi.number().required()
+      Joi.number().required(),
     );
     return this.sendRequest('set_rgb', [colorDec, effect, time], schema);
   }
@@ -371,7 +373,7 @@ export default class Yeelight extends EventEmitter {
       Joi.number().min(0).max(359).required(),
       Joi.number().min(0).max(100).required(),
       Joi.string().allow('sudden', 'smooth').required(),
-      Joi.number().required()
+      Joi.number().required(),
     );
     return this.sendRequest('set_hsv', [hue, saturation, effect, time], schema);
   }
@@ -389,7 +391,7 @@ export default class Yeelight extends EventEmitter {
   addCron(type, value) {
     const schema = Joi.array().items(
       Joi.number().required(),
-      Joi.number().required()
+      Joi.number().required(),
     );
     return this.sendRequest('cron_add', [type, value], schema);
   }
@@ -405,7 +407,7 @@ export default class Yeelight extends EventEmitter {
    */
   getCron(index) {
     const schema = Joi.array().items(
-      Joi.number().required()
+      Joi.number().required(),
     );
     return this.sendRequest('cron_get', [index], schema);
   }
@@ -421,7 +423,7 @@ export default class Yeelight extends EventEmitter {
    */
   deleteCron(index) {
     const schema = Joi.array().items(
-      Joi.number().required()
+      Joi.number().required(),
     );
     return this.sendRequest('cron_del', [index], schema);
   }
@@ -447,7 +449,7 @@ export default class Yeelight extends EventEmitter {
   setAdjust(action, prop) {
     const schema = Joi.array().items(
       Joi.string().allow('increase', 'decrease', 'circle').required(),
-      Joi.string().allow('bright', 'ct', 'color').required()
+      Joi.string().allow('bright', 'ct', 'color').required(),
     );
     return this.sendRequest('set_adjust', [action, prop], schema);
   }
@@ -470,7 +472,7 @@ export default class Yeelight extends EventEmitter {
     const schema = Joi.array().items(
       Joi.number().allow(0, 1).required(),
       Joi.string().required(),
-      Joi.number().min(1).max(65535).required()
+      Joi.number().min(1).max(65535).required(),
     );
     return this.sendRequest('set_music', [action, host, port], schema);
   }
@@ -496,7 +498,7 @@ export default class Yeelight extends EventEmitter {
     const schema = Joi.array().items(
       Joi.number().required(),
       Joi.number().allow(0, 1, 2).required(),
-      Joi.string().required()
+      Joi.string().required(),
     );
     return this.sendRequest('start_cf', [action, action, flowExpression], schema);
   }
