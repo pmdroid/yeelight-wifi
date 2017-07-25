@@ -108,8 +108,6 @@ export default class Yeelight extends EventEmitter {
     const id = json.id;
     const result = json.result;
 
-    console.log(resp);
-
     if (!id) {
       this.log(`got response without id: ${resp.toString().replace(/\r\n/, '')}`);
       this.emit('notifcation', json);
