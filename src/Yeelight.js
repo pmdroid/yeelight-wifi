@@ -104,6 +104,7 @@ export default class Yeelight extends EventEmitter {
    * @param {string} resp response comming from the socket as a json string
    */
   formatResponse(resp) {
+    try {
     const json = JSON.parse(resp);
     const id = json.id;
     const result = json.result;
@@ -122,6 +123,10 @@ export default class Yeelight extends EventEmitter {
       this.emit('error', id, error);
     } else {
       this.emit('response', id, result);
+    }
+    }
+    catch(e) {
+      this.emit('error', e)
     }
   }
 
