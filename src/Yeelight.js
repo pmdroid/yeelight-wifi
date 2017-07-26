@@ -104,24 +104,28 @@ export default class Yeelight extends EventEmitter {
    * @param {string} resp response comming from the socket as a json string
    */
   formatResponse(resp) {
-    const json = JSON.parse(resp);
-    const id = json.id;
-    const result = json.result;
+    try {
+      const json = JSON.parse(resp);
+      const id = json.id;
+      const result = json.result;
 
-    if (!id) {
-      this.log(`got response without id: ${resp.toString().replace(/\r\n/, '')}`);
-      this.emit('notifcation', json);
-      return;
-    }
+      if (!id) {
+        this.log(`got response without id: ${resp.toString().replace(/\r\n/, '')}`);
+        this.emit('notifcation', json);
+        return;
+      }
 
-    this.log(`got response: ${resp.toString().replace(/\r\n/, '')}`);
+      this.log(`got response: ${resp.toString().replace(/\r\n/, '')}`);
 
-    if (json && json.error) {
-      const error = new Error(json.error.message);
-      error.code = json.error.code;
-      this.emit('error', id, error);
-    } else {
-      this.emit('response', id, result);
+      if (json && json.error) {
+        const error = new Error(json.error.message);
+        error.code = json.error.code;
+        this.emit('error', id, error);
+      } else {
+        this.emit('response', id, result);
+      }
+    } catch (ex) {
+      this.emit('error', ex);
     }
   }
 
