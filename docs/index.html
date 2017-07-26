@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>yeelight 1.0.6 | Documentation</title>
+  <title>yeelight-wifi 2.2.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -13,8 +13,8 @@
     <div class='clearfix md-mxn2'>
       <div class='fixed xs-hide fix-3 overflow-auto max-height-100'>
         <div class='py1 px2'>
-          <h3 class='mb0 no-anchor'>yeelight</h3>
-          <div class='mb1'><code>1.0.6</code></div>
+          <h3 class='mb0 no-anchor'>yeelight-wifi</h3>
+          <div class='mb1'><code>2.2.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -38,6 +38,12 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
+                        href='#YeelightSearch#addLight'
+                        class='regular pre-open'>
+                        #addLight
+                      </a></li>
+                      
+                      <li><a
                         href='#YeelightSearch#getYeelights'
                         class='regular pre-open'>
                         #getYeelights
@@ -49,7 +55,14 @@
                         #getYeelightById
                       </a></li>
                       
+                      <li><a
+                        href='#YeelightSearch#refresh'
+                        class='regular pre-open'>
+                        #refresh
+                      </a></li>
+                      
                     </ul>
+                  
                   
                   
                 </div>
@@ -199,6 +212,7 @@
                     </ul>
                   
                   
+                  
                 </div>
                 
                 </li>
@@ -217,11 +231,13 @@
 
   
   <div class='clearfix'>
+    
     <h3 class='fl m0' id='yeelightsearch'>
       YeelightSearch
     </h3>
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/2ea10988fe16702e5cd182268af247d2c26dc74e/src/index.js#L14-L49'>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/index.js#L14-L64'>
       <span>src/index.js</span>
       </a>
     
@@ -231,11 +247,11 @@
   <p>Create a new instance of the YeelightSearch class
 and start searching for new Yeelights
 once a Yeelight has been found it will create an Yeelight instance
-and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
+and emits the 'found' event light the Yeelight instance as payload</p>
 
 
   <div class='pre p1 fill-light mt0'>new YeelightSearch()</div>
-
+  
   
     <p>
       Extends
@@ -245,6 +261,7 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
     </p>
   
 
+  
   
   
   
@@ -267,6 +284,74 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
+    <div class='border-bottom' id='YeelightSearch#addLight'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>addLight(lightdata)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/index.js#L32-L39'>
+      <span>src/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>adds a new light to the lights array</p>
+
+
+  <div class='pre p1 fill-light mt0'>addLight(lightdata: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>lightdata</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
     <div class='border-bottom' id='YeelightSearch#getYeelights'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -278,14 +363,24 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/index.js#L45-L47'>
+      <span>src/index.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>returns a list of all found Yeelights</p>
 
 
-  <div class='pre p1 fill-light mt0'>getYeelights(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>&lt;<a href="#yeelight">Yeelight</a>&gt;</div>
-
+  <div class='pre p1 fill-light mt0'>getYeelights(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>&#x3C;<a href="#yeelight">Yeelight</a>></div>
+  
   
 
+  
   
   
   
@@ -299,7 +394,7 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>&lt;<a href="#yeelight">Yeelight</a>&gt;</code>:
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>&#x3C;<a href="#yeelight">Yeelight</a>></code>:
         array with yeelight instances
 
       
@@ -331,14 +426,24 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/index.js#L54-L56'>
+      <span>src/index.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>returns one Yeelight found by id</p>
 
 
   <div class='pre p1 fill-light mt0'>getYeelightById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="#yeelight">Yeelight</a></div>
-
+  
   
 
+  
   
   
   
@@ -351,7 +456,8 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> Yeelight Id
+            <span class='code bold'>id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    Yeelight Id
 
           </div>
           
@@ -386,6 +492,61 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
       </div>
     </div>
   
+    <div class='border-bottom' id='YeelightSearch#refresh'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>refresh()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/index.js#L61-L63'>
+      <span>src/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>refresh lights sending a new m-search</p>
+
+
+  <div class='pre p1 fill-light mt0'>refresh()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
 </div>
 
   
@@ -400,11 +561,13 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
 
   
   <div class='clearfix'>
+    
     <h3 class='fl m0' id='yeelight'>
       Yeelight
     </h3>
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/2ea10988fe16702e5cd182268af247d2c26dc74e/src/Yeelight.js#L22-L515'>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L22-L519'>
       <span>src/Yeelight.js</span>
       </a>
     
@@ -414,8 +577,8 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
   <p>Class Yeelight provides all functionality</p>
 
 
-  <div class='pre p1 fill-light mt0'>Yeelight</div>
-
+  <div class='pre p1 fill-light mt0'>new Yeelight(data: any, yeelightData: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</div>
+  
   
     <p>
       Extends
@@ -430,6 +593,7 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
   
   
   
+  
 
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
@@ -437,7 +601,16 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>yeelightData</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code> 
+            <span class='code bold'>data</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>yeelightData</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    
           </div>
           
         </div>
@@ -482,14 +655,24 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L136-L138'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>returns The ID provided by the Yeelight</p>
 
 
   <div class='pre p1 fill-light mt0'>getId(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
-
+  
   
 
+  
   
   
   
@@ -535,14 +718,24 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L144-L146'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>returns The MODEL provided by the Yeelight</p>
 
 
   <div class='pre p1 fill-light mt0'>getModel(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
-
+  
   
 
+  
   
   
   
@@ -557,7 +750,7 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
-        model string &#x27;color&#x27; or &#x27;mono&#x27;
+        model string 'color' or 'mono'
 
       
     
@@ -588,14 +781,24 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L152-L154'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>returns The NAME provided by the Yeelight</p>
 
 
   <div class='pre p1 fill-light mt0'>getName(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
-
+  
   
 
+  
   
   
   
@@ -641,14 +844,24 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L161-L166'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>Sets the name on the Yeelight</p>
 
 
   <div class='pre p1 fill-light mt0'>setName(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
@@ -661,7 +874,8 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> 
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
           </div>
           
         </div>
@@ -706,14 +920,24 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L179-L181'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to retrieve current property of smart LED.</p>
 
 
   <div class='pre p1 fill-light mt0'>getValues(props: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
@@ -726,9 +950,10 @@ and emits the &#x27;found&#x27; event light the Yeelight instance as payload</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>props</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>)</code> The parameter is a list of property names and the response contains
+            <span class='code bold'>props</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>)</code>
+	    The parameter is a list of property names and the response contains
 a list of corresponding property values. If the requested property name is not recognized by
-smart LED, then a empty string value (&quot;&quot;) will be returned.
+smart LED, then a empty string value ("") will be returned.
 
           </div>
           
@@ -755,7 +980,7 @@ smart LED, then a empty string value (&quot;&quot;) will be returned.
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>getValues([<span class="hljs-string">'power'</span>, <span class="hljs-string">'bright'</span>);</pre>
+      <pre class='p1 overflow-auto round fill-light'>getValues(<span class="hljs-string">'power'</span>, <span class="hljs-string">'bright'</span>);</pre>
     
   
 
@@ -780,14 +1005,24 @@ smart LED, then a empty string value (&quot;&quot;) will be returned.
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L187-L189'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to toggle the smart LED.</p>
 
 
   <div class='pre p1 fill-light mt0'>toggle(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
@@ -833,6 +1068,15 @@ smart LED, then a empty string value (&quot;&quot;) will be returned.
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L197-L199'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to save current state of smart LED in persistent memory.
 So if user powers off and then powers on the smart LED again (hard power reset),
@@ -840,9 +1084,10 @@ the smart LED will show last saved state.</p>
 
 
   <div class='pre p1 fill-light mt0'>setDefaultState(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
@@ -881,21 +1126,31 @@ the smart LED will show last saved state.</p>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>setColorTemperature(temperature, [effect], [time])</span>
+            <span class='code strong strong truncate'>setColorTemperature(temperature, effect, time)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L222-L229'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>Will change the color temperature of the Yeelight</p>
 
 
-  <div class='pre p1 fill-light mt0'>setColorTemperature(temperature: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, effect: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>], time: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  <div class='pre p1 fill-light mt0'>setColorTemperature(temperature: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, effect: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  
   
 
+  
   
   
   
@@ -908,7 +1163,8 @@ the smart LED will show last saved state.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>temperature</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> is the target color temperature. The type is integer and
+            <span class='code bold'>temperature</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    is the target color temperature. The type is integer and
 range is 1700 ~ 6500 (k).
 
           </div>
@@ -917,13 +1173,13 @@ range is 1700 ~ 6500 (k).
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>effect</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]
-            (default <code>&#39;smooth&#39;</code>)
-            )</code> support two values: &#x27;sudden&#x27; and &#x27;smooth&#x27;. If effect is &#x27;sudden&#x27;,
+            <span class='code bold'>effect</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;smooth&#39;</code>)</code>
+	    support two values: 'sudden' and 'smooth'. If effect is 'sudden',
 then the color temperature will be changed directly to target value, under this case, the
-third parameter &#x27;duration&#x27; is ignored. If effect is &#x27;smooth&#x27;, then the color temperature will
+third parameter 'duration' is ignored. If effect is 'smooth', then the color temperature will
 be changed to target value in a gradual fashion, under this case, the total time of gradual
-change is specified in third parameter &quot;duration&quot;.
+change is specified in third parameter "duration".
 
           </div>
           
@@ -931,9 +1187,9 @@ change is specified in third parameter &quot;duration&quot;.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>time</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]
-            (default <code>1000</code>)
-            )</code> time specifies the total time of the gradual changing. The unit is
+            <span class='code bold'>time</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>1000</code>)</code>
+	    time specifies the total time of the gradual changing. The unit is
 milliseconds. The minimum support duration is 30 milliseconds.
 
           </div>
@@ -981,21 +1237,31 @@ setColorTemperature(<span class="hljs-number">5000</span>, <span class="hljs-str
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>setBrightness(brightness, [effect], [time])</span>
+            <span class='code strong strong truncate'>setBrightness(brightness, effect, time)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L247-L254'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to change the brightness of a smart LED.</p>
 
 
-  <div class='pre p1 fill-light mt0'>setBrightness(brightness: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, effect: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>], time: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  <div class='pre p1 fill-light mt0'>setBrightness(brightness: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, effect: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  
   
 
+  
   
   
   
@@ -1008,7 +1274,8 @@ setColorTemperature(<span class="hljs-number">5000</span>, <span class="hljs-str
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>brightness</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> is the target brightness. The type is integer and ranges
+            <span class='code bold'>brightness</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    is the target brightness. The type is integer and ranges
 from 1 to 100. The brightness is a percentage instead of a absolute value. 100 means
 maximum brightness while 1 means the minimum brightness.
 
@@ -1018,9 +1285,9 @@ maximum brightness while 1 means the minimum brightness.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>effect</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]
-            (default <code>&#39;smooth&#39;</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>effect</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;smooth&#39;</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1028,9 +1295,9 @@ maximum brightness while 1 means the minimum brightness.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>time</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]
-            (default <code>1000</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>time</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>1000</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1077,21 +1344,31 @@ setBrightness(<span class="hljs-number">25</span>, <span class="hljs-string">'sm
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>turnOn([effect], [time])</span>
+            <span class='code strong strong truncate'>turnOn(effect, time)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L268-L275'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to switch on the smart LED (software managed on/off).</p>
 
 
-  <div class='pre p1 fill-light mt0'>turnOn(effect: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>], time: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  <div class='pre p1 fill-light mt0'>turnOn(effect: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  
   
 
+  
   
   
   
@@ -1104,9 +1381,9 @@ setBrightness(<span class="hljs-number">25</span>, <span class="hljs-string">'sm
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>effect</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]
-            (default <code>&#39;smooth&#39;</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>effect</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;smooth&#39;</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1114,9 +1391,9 @@ setBrightness(<span class="hljs-number">25</span>, <span class="hljs-string">'sm
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>time</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]
-            (default <code>1000</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>time</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>1000</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1163,21 +1440,31 @@ turnOn(<span class="hljs-string">'smooth'</span>, <span class="hljs-number">1000
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>turnOff([effect], [time])</span>
+            <span class='code strong strong truncate'>turnOff(effect, time)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L289-L296'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to switch off the smart LED (software managed on/off).</p>
 
 
-  <div class='pre p1 fill-light mt0'>turnOff(effect: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>], time: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  <div class='pre p1 fill-light mt0'>turnOff(effect: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  
   
 
+  
   
   
   
@@ -1190,9 +1477,9 @@ turnOn(<span class="hljs-string">'smooth'</span>, <span class="hljs-number">1000
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>effect</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]
-            (default <code>&#39;smooth&#39;</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>effect</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;smooth&#39;</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1200,9 +1487,9 @@ turnOn(<span class="hljs-string">'smooth'</span>, <span class="hljs-number">1000
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>time</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]
-            (default <code>1000</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>time</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>1000</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1256,6 +1543,15 @@ turnOff(<span class="hljs-string">'smooth'</span>, <span class="hljs-number">100
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L319-L327'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to set the smart LED directly to specified state. If +
 the smart LED is off, then it will turn on the smart LED firstly and
@@ -1263,9 +1559,10 @@ then apply the specified command.</p>
 
 
   <div class='pre p1 fill-light mt0'>setScene(params: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
@@ -1278,24 +1575,25 @@ then apply the specified command.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>params</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>)</code> can be &quot;color&quot;, &quot;hsv&quot;, &quot;ct&quot;, &quot;cf&quot;, &quot;auto_dealy_off&quot;.
+            <span class='code bold'>params</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>)</code>
+	    can be "color", "hsv", "ct", "cf", "auto_dealy_off".
 
 <br>
-&quot;color&quot; means change the smart LED to specified color and brightness.
+"color" means change the smart LED to specified color and brightness.
 
 <br>
-&quot;hsv&quot; means change the smart LED to specified color and brightness&quot;
+"hsv" means change the smart LED to specified color and brightness"
 
 <br>
-&quot;ct&quot; means change the smart LED to specified ct and brightness.
+"ct" means change the smart LED to specified ct and brightness.
 
 <br>
-&quot;cf&quot; means start a color flow in specified fashion.
+"cf" means start a color flow in specified fashion.
 
 <br>
-c&quot;auto_delay_off&quot; means turn on the smart LED to specified
+c"auto_delay_off" means turn on the smart LED to specified
 brightness and start a sleep timer to turn off the light after the specified minutes.
-&quot;val1&quot;, &quot;val2&quot;, &quot;val3&quot; are class specific.
+"val1", "val2", "val3" are class specific.
 
           </div>
           
@@ -1343,21 +1641,31 @@ setScene([<span class="hljs-string">'cf'</span>, <span class="hljs-number">0</sp
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>setRGB(hex, [effect], [time])</span>
+            <span class='code strong strong truncate'>setRGB(hex, effect, time)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L344-L353'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to change the color of a smart LED.</p>
 
 
-  <div class='pre p1 fill-light mt0'>setRGB(hex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, effect: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>], time: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  <div class='pre p1 fill-light mt0'>setRGB(hex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, effect: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  
   
 
+  
   
   
   
@@ -1370,7 +1678,8 @@ setScene([<span class="hljs-string">'cf'</span>, <span class="hljs-number">0</sp
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>hex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> is the target color, whose type is integer.
+            <span class='code bold'>hex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    is the target color, whose type is integer.
 It should be expressed in hex 0xFFFFFF.
 
           </div>
@@ -1379,9 +1688,9 @@ It should be expressed in hex 0xFFFFFF.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>effect</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]
-            (default <code>&#39;smooth&#39;</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>effect</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;smooth&#39;</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1389,9 +1698,9 @@ It should be expressed in hex 0xFFFFFF.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>time</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]
-            (default <code>1000</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>time</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>1000</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1438,21 +1747,31 @@ setRGB(<span class="hljs-string">'#ffffff'</span>, <span class="hljs-string">'sm
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>setHSV(hue, saturation, [effect], [time])</span>
+            <span class='code strong strong truncate'>setHSV(hue, saturation, effect, time)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L373-L381'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to change the color of a smart LED.</p>
 
 
-  <div class='pre p1 fill-light mt0'>setHSV(hue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, saturation: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, effect: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>], time: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  <div class='pre p1 fill-light mt0'>setHSV(hue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, saturation: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, effect: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  
   
 
+  
   
   
   
@@ -1465,7 +1784,8 @@ setRGB(<span class="hljs-string">'#ffffff'</span>, <span class="hljs-string">'sm
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>hue</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> &quot;hue&quot; is the target hue value, whose type is integer.
+            <span class='code bold'>hue</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    "hue" is the target hue value, whose type is integer.
 It should be expressed in decimal integer ranges from 0 to 359.
 
           </div>
@@ -1474,8 +1794,9 @@ It should be expressed in decimal integer ranges from 0 to 359.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>saturation</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> is the target saturation value whose type is integer.
-It&#x27;s range is 0 to 100.
+            <span class='code bold'>saturation</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    is the target saturation value whose type is integer.
+It's range is 0 to 100.
 
           </div>
           
@@ -1483,9 +1804,9 @@ It&#x27;s range is 0 to 100.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>effect</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]
-            (default <code>&#39;smooth&#39;</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>effect</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;smooth&#39;</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1493,9 +1814,9 @@ It&#x27;s range is 0 to 100.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>time</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]
-            (default <code>1000</code>)
-            )</code> Refer to &#x27;setColorTemperature&#x27; method.
+            <span class='code bold'>time</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>1000</code>)</code>
+	    Refer to 'setColorTemperature' method.
 
           </div>
           
@@ -1549,14 +1870,24 @@ setHSV(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L393-L399'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to start a timer job on the smart LED.</p>
 
 
   <div class='pre p1 fill-light mt0'>addCron(type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
@@ -1569,7 +1900,8 @@ setHSV(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> currently can only be 0. (means power off)
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    currently can only be 0. (means power off)
 
           </div>
           
@@ -1577,7 +1909,8 @@ setHSV(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> is the length of the timer (in minutes).
+            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    is the length of the timer (in minutes).
 
           </div>
           
@@ -1622,21 +1955,31 @@ setHSV(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>getCron(type, index)</span>
+            <span class='code strong strong truncate'>getCron(index, type)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L410-L415'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to retrieve the setting of the current cron job of the specified type.</p>
 
 
-  <div class='pre p1 fill-light mt0'>getCron(type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, index: Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  <div class='pre p1 fill-light mt0'>getCron(index: any, type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  
   
 
+  
   
   
   
@@ -1649,15 +1992,17 @@ setHSV(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> the type of the cron job. (currently only support 0).
-
+            <span class='code bold'>index</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>index</span> <code class='quiet'>(Any)</code> 
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    the type of the cron job. (currently only support 0).
+
           </div>
           
         </div>
@@ -1701,21 +2046,31 @@ setHSV(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>deleteCron(type, index)</span>
+            <span class='code strong strong truncate'>deleteCron(index, type)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L426-L431'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to stop the specified cron job.</p>
 
 
-  <div class='pre p1 fill-light mt0'>deleteCron(type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, index: Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  <div class='pre p1 fill-light mt0'>deleteCron(index: any, type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  
   
 
+  
   
   
   
@@ -1728,15 +2083,17 @@ setHSV(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> the type of the cron job. (currently only support 0).
-
+            <span class='code bold'>index</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>index</span> <code class='quiet'>(Any)</code> 
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    the type of the cron job. (currently only support 0).
+
           </div>
           
         </div>
@@ -1787,15 +2144,25 @@ setHSV(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L451-L457'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to change brightness, CT or color of a smart LED
-without knowing the current value, it&#x27;s main used by controllers.</p>
+without knowing the current value, it's main used by controllers.</p>
 
 
   <div class='pre p1 fill-light mt0'>setAdjust(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, prop: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
@@ -1808,16 +2175,17 @@ without knowing the current value, it&#x27;s main used by controllers.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>action</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> the direction of the adjustment. The valid value can be:
+            <span class='code bold'>action</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    the direction of the adjustment. The valid value can be:
 
 <br>
-&#x27;increase&#x27;: increase the specified property
+'increase': increase the specified property
 
 <br>
-&#x27;decrease&#x27;: decrease the specified property
+'decrease': decrease the specified property
 
 <br>
-&#x27;circle&#x27;: increase the specified property, after it reaches the max value, go back to minimum value
+'circle': increase the specified property, after it reaches the max value, go back to minimum value
 
           </div>
           
@@ -1825,16 +2193,17 @@ without knowing the current value, it&#x27;s main used by controllers.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>prop</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> the property to adjust. The valid value can be:
+            <span class='code bold'>prop</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    the property to adjust. The valid value can be:
 
 <br>
-&#x27;bright&#x27;: adjust brightness.
+'bright': adjust brightness.
 
 <br>
-&#x27;ct&#x27;: adjust color temperature.
+'ct': adjust color temperature.
 
 <br>
-&#x27;color&#x27;: adjust color. (When &#x27;prop&#x27; is &#x27;color&#x27;, the &#x27;action&#x27; can only be &#x27;circle&#x27;, otherwise, it will be deemed as invalid request.)
+'color': adjust color. (When 'prop' is 'color', the 'action' can only be 'circle', otherwise, it will be deemed as invalid request.)
 
           </div>
           
@@ -1886,15 +2255,25 @@ without knowing the current value, it&#x27;s main used by controllers.</p>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L473-L480'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to start or stop music mode on a device. Under music mode,
 no property will be reported and no message quota is checked.</p>
 
 
   <div class='pre p1 fill-light mt0'>setMusicMode(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, host: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, port: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
@@ -1907,7 +2286,8 @@ no property will be reported and no message quota is checked.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>action</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code> the action of set_music command. The valid value can be:
+            <span class='code bold'>action</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    the action of set_music command. The valid value can be:
 
 <br>
 0: turn off music mode.
@@ -1921,7 +2301,8 @@ no property will be reported and no message quota is checked.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>host</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> the IP address of the music server.
+            <span class='code bold'>host</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    the IP address of the music server.
 
           </div>
           
@@ -1929,7 +2310,8 @@ no property will be reported and no message quota is checked.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>port</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> the TCP port music application is listening on
+            <span class='code bold'>port</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    the TCP port music application is listening on
 
           </div>
           
@@ -1981,6 +2363,15 @@ no property will be reported and no message quota is checked.</p>
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L499-L506'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to start a color flow. Color flow is a series of smart
 LED visible state changing. It can be brightness changing,
@@ -1988,9 +2379,10 @@ color changing or color temperature changing.</p>
 
 
   <div class='pre p1 fill-light mt0'>startColorFlow(count: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, flowExpression: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
@@ -2003,7 +2395,8 @@ color changing or color temperature changing.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>count</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code> is the total number of visible state changing
+            <span class='code bold'>count</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    is the total number of visible state changing
 before color flow stopped. 0 means infinite loop on the state changing.
 
           </div>
@@ -2012,7 +2405,8 @@ before color flow stopped. 0 means infinite loop on the state changing.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>action</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> is the action taken after the flow is stopped.
+            <span class='code bold'>action</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    is the action taken after the flow is stopped.
 
 <br>
 0: means smart LED recover to the state before the color flow started.
@@ -2029,7 +2423,8 @@ before color flow stopped. 0 means infinite loop on the state changing.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>flowExpression</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> is the expression of the state changing series.
+            <span class='code bold'>flowExpression</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    is the expression of the state changing series.
 
           </div>
           
@@ -2081,14 +2476,24 @@ before color flow stopped. 0 means infinite loop on the state changing.
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/pmdroid/yeelight-wifi/blob/1e78c4c9c76cd05dae1d2394da807be2789cb903/src/Yeelight.js#L516-L518'>
+      <span>src/Yeelight.js</span>
+      </a>
+    
+  </div>
+  
 
   <p>This method is used to stop a running color flow</p>
 
 
   <div class='pre p1 fill-light mt0'>stopColorFlow(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-
+  
   
 
+  
   
   
   
