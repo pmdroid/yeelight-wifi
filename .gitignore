@@ -352,3 +352,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+build/
+*-lock.json
