@@ -23,7 +23,7 @@
     "mocha": "^3.4.0",
     "mocha-junit-reporter": "^1.12.0",
     "mversion": "^1.10.1",
-    "nyc": "^10.1.2",
+    "nyc": "^11.1.0",
     "sinon": "^2.2.0"
   },
   "scripts": {
