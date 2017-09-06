@@ -20,7 +20,7 @@ describe('Yeelight', () => {
   let socketConnectStub;
 
   beforeEach(() => {
-    socketConnectStub = sinon.stub(net.Socket.prototype, 'connect', (port, hostname, cb) => {
+    socketConnectStub = sinon.stub(net.Socket.prototype, 'connect').callsFake((port, hostname, cb) => {
       cb();
     });
 
@@ -29,7 +29,7 @@ describe('Yeelight', () => {
     yeelight.removeAllListeners('error');
 
     yeelight.socket = new net.Socket({});
-    socketWriteStub = sinon.stub(yeelight.socket, 'write', function write(data, cb) {
+    socketWriteStub = sinon.stub(yeelight.socket, 'write').callsFake(function write(data, cb) {
       const args = socketWriteStub.args;
       if (args.length > 0) {
         this.emit('data', socketWriteStub.args[socketWriteStub.callCount - 1][0]);
@@ -150,7 +150,7 @@ describe('Yeelight', () => {
   describe('#sendRequest', () => {
     beforeEach(() => {
       yeelight.socket = new net.Socket({});
-      socketWriteStub = sinon.stub(yeelight.socket, 'write', (data, cb) => {
+      socketWriteStub = sinon.stub(yeelight.socket, 'write').callsFake((data, cb) => {
         cb(new Error('Socket is closed'));
       });
     });
