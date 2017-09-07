@@ -18,7 +18,7 @@
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^2.1.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.6.0",
+    "eslint-plugin-react": "^7.2.0",
     "isparta": "^4.0.0",
     "mocha": "^3.4.0",
     "mocha-junit-reporter": "^1.12.0",
